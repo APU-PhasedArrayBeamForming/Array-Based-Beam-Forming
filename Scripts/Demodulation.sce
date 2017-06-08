@@ -1,4 +1,4 @@
-y=wavread("./Recordings/am1110.wav");
+y=wavread("./personalMod.wav");
 
 
 //I/Q data broken apart
@@ -13,7 +13,7 @@ I = I(1:n);
 Q = Q(1:n);
 
 
-dt = 1/1e7
+dt = 0.5e-6
 
 //Demodulation
 t = linspace(0,dt*(n-1),n)
@@ -24,7 +24,7 @@ Br = real(B);
 
 //plot(abs(fE));
 
-//Fast Four Year Transform
+//Fast Fourier Transform
 
 df = 1/(n*dt);
 m = n
@@ -42,5 +42,5 @@ end
 //plot(fr,abs(fE));
 //plot(fr(1:2000000)',abs(fE(1:2000000)))
 
-//playsnd(Br,10e6)
+//playsnd(Br,0.5e-6)
 
