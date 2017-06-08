@@ -1,8 +1,7 @@
-y=wavread("./Recordings/am1110.wav");
-
+y=wavread("./Recordings/154997700.wav");
 
 //I/Q data broken apart
-f = 1110000
+f = 154997700
 O = 2*%pi*f
 Q = y(1,:);
 I = y(2,:);
@@ -13,14 +12,16 @@ I = I(1:n);
 Q = Q(1:n);
 
 
-dt = 1/1e7
+dt = 0.5e-6
 
 //Demodulation
 t = linspace(0,dt*(n-1),n)
 E = I + %i*Q;
 D = exp(%i*O*t);
+//Removes carrier
 B = E./D;
 Br = real(B);
+//B1 = Br.*cos(O*t);
 
 //plot(abs(fE));
 
@@ -29,7 +30,7 @@ Br = real(B);
 df = 1/(n*dt);
 m = n
 
-fE = fft(I(1:m), -1);
+fE = fft(E(1:m), -1);
 
 for i = 1:m
     if(i<(m/2)+1) then
@@ -42,5 +43,4 @@ end
 //plot(fr,abs(fE));
 //plot(fr(1:2000000)',abs(fE(1:2000000)))
 
-//playsnd(Br,10e6)
-
+playsnd(Br,2e6)
