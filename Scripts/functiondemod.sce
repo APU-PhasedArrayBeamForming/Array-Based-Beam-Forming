@@ -23,7 +23,7 @@ y=wavread("./personalMod.wav");
 
 
 //I/Q data broken apart
-f = 1110000
+f = 155000000
 O = 2*%pi*f
 Q = y(1,:);
 I = y(2,:);
@@ -67,11 +67,10 @@ end
 
 
 
-
 x=wavread("./personalMod.wav", "size")
 [y,Fs,bits]=wavread("./personalMod.wav");Fs,bits
-Vc=fE //carrier signal
-fc=155000 //carrier frequency
+Vc=cos(600.*t)//carrier signal
+fc=155000000 //carrier frequency
 
 //function stuff
  xdem = real(I.*Vc);
