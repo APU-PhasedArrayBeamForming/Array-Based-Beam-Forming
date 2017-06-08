@@ -1,0 +1,41 @@
+fmmod
+
+Analog Frequency modulation
+
+Calling Sequence
+
+[x,Vm,Vc] = fmmod(Ec,Em,fm,fc,fs)
+
+Parameters
+
+Ec:carrier signal amplitude in volts
+Em:Message signal amplitude in volts
+fm:Message signal frequency in Hz
+fc:carrier signal frequency in Hz
+fs:sampling frequency in samples/sec
+Vs:Message signal
+Vc:carrier signal
+x:Frequency modulated signal
+
+Description
+
+fmmod -It generates Analog FM modulated signal
+
+Examples
+
+Em = 2;//2 volts
+Ec = 6;//6 volts
+fm = 5;//in hertz
+fc = 10;//in hertz
+fs = 100;//in samples/sec
+[x,Vm,Vc] = fmmod(Ec,Em,fm,fc,fs);
+
+Authors
+
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+
+[1]. An Introduction to Analog and Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
+[2]. Electronic Communications Systems-Fundamentals through Advanced, Wayne Tomasi,5th Edition,2009.

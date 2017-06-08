@@ -1,0 +1,38 @@
+Alaw
+
+Performs Alaw nonlinear quantization
+
+Calling Sequence
+
+[Cx,Xmax] = Alaw(x,A)
+
+Parameters
+
+x: input vector
+A: compression factor
+Cx: A-law compressor output
+Xmax: maximum of input vector
+
+Description
+
+Alaw -performs A-law nonlinear quantization
+
+Examples
+
+x = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1];//normalized input
+A = 1;//A=2,A=100
+[Cx,Xmax] = Alaw(x,A);
+plot(x,Cx);
+title('A-law transfer curve') 
+
+Authors
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+[1]. An Introduction to Analog and Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
+[2]. Electronic Communications Systems-Fundamentals through Advanced, Wayne Tomasi,5th Edition,2009.
+
+
+
+

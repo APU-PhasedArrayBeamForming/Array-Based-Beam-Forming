@@ -1,0 +1,43 @@
+ampdemod
+
+Amplitude demodulation using envelope demodulation technique
+
+Calling Sequence
+
+[y] = ampdemod(x,Vc,fc,fs,Em,Ec)
+
+Parameters
+
+x: AM modulated signal
+Vc: carrier signal
+fc:carrier frequency in Hz
+Em:message signal amplitude in volts
+Ec:carrier signal amplitude in volts
+fs:sampling frequency in samples/sec
+y:demodulated signal
+
+Description
+
+ampdemod -performs amplitude demodulation using envelope demodulation
+
+Examples
+
+Em = 8; //8 volts
+Ec = 10; //20 volts
+fm = 2; //2 Hz
+fc = 10; //10 Hz
+fs = 100; samples/sec
+x = ampmod(Ec,Em,fm,fc,fs);//AM modulation
+Vc =Ec*sin(2*%pi*fc*t);
+y = ampdemod(x,Vc,fc,fs,Em,Ec);
+
+Authors
+
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+
+[1]. An Introduction to Analog and Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
+[2]. Electronic Communications Systems-Fundamentals through Advanced, Wayne Tomasi,5th Edition,2009.
+

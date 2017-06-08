@@ -1,0 +1,38 @@
+fmdemod
+
+Analog Frequency demodulation
+
+Calling Sequence
+
+[y] = fmdemod(x,Vc,Em,Ec,fc,fs)
+
+Parameters
+
+Ec:carrier signal amplitude in volts
+Em:Message signal amplitude in volts
+fc:carrier signal frequency in Hz
+fs:sampling frequency in samples/sec
+Vc:carrier signal
+y:Frequency demodulated signal
+
+Description
+
+fmdemod -It demodulates the FM modulated signal
+
+Examples
+
+Em = 2;//2 volts
+Ec = 6;//6 volts
+fc = 10;//in hertz
+fs = 100;//in samples/sec
+y = fmdemod(x,Vc,Em,Ec,fc,fs);
+
+Authors
+
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+
+[1]. An Introduction to Analog and Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
+[2]. Electronic Communications Systems-Fundamentals through Advanced, Wayne Tomasi,5th Edition,2009.

@@ -1,0 +1,50 @@
+pmmod
+
+Analog Phase modulation
+
+Calling Sequence
+
+[x,Vm,Vc] = pmmod(Ec,Em,fm,fc,fs)
+
+Parameters
+
+Ec:carrier signal amplitude in volts
+Em:Message signal amplitude in volts
+fm:modulating signal frequency in Hz
+fc:carrier signal frequency in Hz
+fs:sampling frequency in samples/sec
+Vm:modulating signal
+Vc:carrier signal
+x:Phase Modulated signal
+
+Description
+
+pmmod -It generates angle phase modulated signal.
+
+Examples
+
+Em = 2;//2 volts
+Ec = 6;//6 volts
+fm = 5;//in hertz
+fc = 10;//in hertz
+fs = 100;//in samples/sec
+[x,Vm,Vc] = pmmod(Ec,Em,fm,fc,fs);
+subplot(3,1,1)
+plot(Vm)
+title('Modulating Signal')
+subplot(3,1,2)
+plot(Vc)
+title('Carrier Signal')
+subplot(3,1,3)
+plot(x)
+title('Phase Modulated Signal')
+
+Authors
+
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+
+[1]. An Introduction to Analog and Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
+[2]. Electronic Communications Systems-Fundamentals through Advanced, Wayne Tomasi,5th Edition,2009.
