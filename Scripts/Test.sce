@@ -50,7 +50,7 @@ for i = 1:m                 //for entire length of vector,
     end                     //creating negative part.
 end
 
-//plot(fr,abs(fE));         //plot frequency of fast fourier of entire signal.
+//plot(fr,abs(fE));         //plot frequency of fast fourier of entire signal.doesnt work
 //plot(fr(1:2000000)',abs(fE(1:2000000)))     //same plot but only 1 to 2000000th element
 
 playsnd(Br,2e6)             //play sound for real whole signal
