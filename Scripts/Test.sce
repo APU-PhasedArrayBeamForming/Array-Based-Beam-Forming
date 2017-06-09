@@ -54,3 +54,4 @@ end
 //plot(fr(1:2000000)',abs(fE(1:2000000)))     //same plot but only 1 to 2000000th element
 
 playsnd(Br,2e6)             //play sound for real whole signal
+//plot fr,t
