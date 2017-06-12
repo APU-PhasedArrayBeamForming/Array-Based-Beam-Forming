@@ -25,14 +25,14 @@ D = exp(%i*O*t);
 B = E./D;
 Br = real(B);//this is same as
 //B1 = Br.*cos(O*t); //this
-downsampling_Br = Br(1:3.4:length(Br));
+downsampling_Br = Br(1:8:length(Br));
 
 //plot(abs(fE));
 
 //Fast Fourier Transform
 
 df = 1/(n*dt);
-m = n/3.4
+m = n/8
 
 fE = fft(downsampling_Br(1:m), -1);
 
@@ -44,14 +44,24 @@ for i = 1:m
     end
 end
 
+downsampling_fE = fE(1:10:length(fE));
+
 //plot spectrum (frequency vs relative amplitude)
 //z = 20*log10(abs(fE)/max(abs(fE)));
 //plot(fr(1:m)',z)
 
 //plot(fr,abs(fE));
-//plot(fr(1:m/3000)',abs(fE(1:m/3000)))
-plot(fr(1:m)',abs(fE(1:m)))
+plot(fr(1:m/3000)',abs(fE(1:m/3000)))
+//plot(fr(1:m)',abs(fE(1:m)))
 //Qmu=lin2mu(Q)
 //wavwrite(Qmu,samp,'./foo.wav');
 //savewave('./foo.wav',Q,samp)
-//playsnd(fE,samp/3.4/10)
+//playsnd(downsampling_Br,samp/150)
+
+//pseudo-code
+//get data
+//find fast fourier transform
+//low-pass filter (decimate)
+//demodulate
+//decimate again for audio card of computer/listen in mono
+//playsnd(decimatedthing,samp/1stdecimation/2nddecimation)
