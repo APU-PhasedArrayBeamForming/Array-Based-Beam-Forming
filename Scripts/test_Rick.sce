@@ -1,7 +1,7 @@
-y=wavread("./Fc1030MHz_10MSPS_1KHzModulation_June11_2017_RecA.wav");
+y=wavread("./Fc100KHz_2MSPS_1KHzModulation_June12_2017.wav");
 
 //I/Q data broken apart
-f = 1030000000
+f = 100*10^3
 
 O = 2*%pi*f
 I = y(1,:);
@@ -14,7 +14,7 @@ I = I(1:n);
 Q = Q(1:n);
 
 //Sample Rate = samp, Time Step = dt
-samp=10*10^6;
+samp=2*10^6;
 dt = 1/samp
 
 //Demodulation
@@ -25,16 +25,16 @@ D = exp(%i*O*t);
 B = E./D;
 Br = real(B);//this is same as
 //B1 = Br.*cos(O*t); //this
-downsampling_Br = Br(1:8:length(Br));
+//downsampling_Br = Br(1:8:length(Br));
 
 //plot(abs(fE));
 
 //Fast Fourier Transform
 
 df = 1/(n*dt);
-m = n/8
+m = n
 
-fE = fft(downsampling_Br(1:m), -1);
+fE = fft(E(1:m), -1);
 
 for i = 1:m
     if(i<(m/2)+1) then
@@ -51,7 +51,7 @@ downsampling_fE = fE(1:10:length(fE));
 //plot(fr(1:m)',z)
 
 //plot(fr,abs(fE));
-plot(fr(1:m/3000)',abs(fE(1:m/3000)))
+plot(fr(1:m)',abs(fE(1:m)))
 //plot(fr(1:m)',abs(fE(1:m)))
 //Qmu=lin2mu(Q)
 //wavwrite(Qmu,samp,'./foo.wav');
