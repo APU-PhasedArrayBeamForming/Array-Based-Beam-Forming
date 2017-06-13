@@ -1,7 +1,7 @@
-y=wavread("./Fc100KHz_2MSPS_1KHzModulation_June12_2017.wav");
+y=wavread("./SDRuno_20170613_163150Z_1030000kHz.wav");
 
 //I/Q data broken apart
-f = 100*10^3
+f = 5*10^3
 
 O = 2*%pi*f
 I = y(1,:);
@@ -44,7 +44,7 @@ for i = 1:m
     end
 end
 
-downsampling_fE = fE(1:10:length(fE));
+//downsampling_fE = fE(1:10:length(fE));
 
 //plot spectrum (frequency vs relative amplitude)
 //z = 20*log10(abs(fE)/max(abs(fE)));
