@@ -1,13 +1,13 @@
-y=wavread("./SDRuno_20170613_163150Z_1030000kHz.wav");
+y=wavread("./Fc100KHz_2MSPS_1KHzModulation_June12_2017.wav");
 
 //I/Q data broken apart
-f = 5*10^3
+f = 5*10^3      //double f = 5*10^3
 
-O = 2*%pi*f
-I = y(1,:);
-Q = y(2,:);
-n = size(I,2)
-p = floor(log(n)/log(2));
+O = 2*%pi*f     //double O = f*2*Math.PI
+I = y(1,:);     //double []I = new double[n]  //n is size of I
+Q = y(2,:);     //double []Q = new double [m]  //m is size of Q
+n = size(I,2)   //double n = size.length()
+p = floor(log(n)/log(2)); //n = 
 n = 2^p
 n=262144
 I = I(1:n);
@@ -44,12 +44,24 @@ for i = 1:m
     end
 end
 
-//downsampling_fE = fE(1:10:length(fE));
 
-//plot spectrum (frequency vs relative amplitude)
+    //filter things
+    //plot
+h=eqfir(32,[0,0.2;0.3,0.5], [1,1],[1,0]);
+g=h
+g(N+1:512)=0
+plot(20*log10(abs(fft(g,-1)
+
+
+
+
+    //downsampling_fE = fE(1:10:length(fE));
+
+    //plot spectrum (frequency vs relative amplitude)
 //z = 20*log10(abs(fE)/max(abs(fE)));
 //plot(fr(1:m)',z)
 
+    //original plot commands
 //plot(fr,abs(fE));
 plot(fr(1:m)',abs(fE(1:m)))
 //plot(fr(1:m)',abs(fE(1:m)))
