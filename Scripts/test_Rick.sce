@@ -27,16 +27,16 @@ D = exp(%i*O*t);
 B = E./D;
 Br = real(B);//this is same as
 //B1 = Br.*cos(O*t); //this
-downsampling_Br = Br(1:2:length(Br));
+//downsampling_Br = Br(1:100:length(Br));
 
 //plot(abs(fE));
 
 //Fast Fourier Transform
 
 df = 1/(n*dt);
-m = n/2
+m = n
 
-fE = fft(downsampling_Br(1:m), -1);
+fE = fft(E(1:m), -1);
 
 for i = 1:m
     if(i<(m/2)+1) then
@@ -49,17 +49,18 @@ end
 
    //filter things
     //plot
-N=64
-h=eqfir(N,[0 .4; .45 .5], [1 0],[1 1]);
+N=32
+h=eqfir(N,[0 .05; .15 .5], [1 0],[1 1]);
 g=h
 g(N+1:512)=0
 //plot(20*log10(abs(fft(g,-1))))
 //1e5 goal
 //edges around 1khz
 
-Z=convol(h,fE)
+Z=convol(h,E)
+Zf=fft(Z)
 //plot(fr(1:m)',abs(Z(1:m)))
-
+plot(fr(1:m)',abs(Zf(1:m)))
 
 
     //downsampling_fE = fE(1:10:length(fE));
@@ -70,7 +71,7 @@ Z=convol(h,fE)
 
     //original plot commands
 //plot(fr,abs(fE));
-plot(fr(1:m)',abs(fE(1:m)))
+//plot(fr(1:m)',abs(fE(1:m)))
 //plot(fr(1:m)',abs(fE(1:m)))
 //Qmu=lin2mu(Q)
 //wavwrite(Qmu,samp,'./foo.wav');
