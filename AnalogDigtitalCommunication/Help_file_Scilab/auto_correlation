@@ -1,0 +1,35 @@
+auto_correlation
+
+Auto correlation of finite discrete sequence
+
+Calling Sequence
+
+[Rxx] = auto_correlation(x)
+
+Parameters
+
+x: input discrete sequence
+Rxx: auto-correlation output sequence
+
+Description
+
+auto_correlation -Auto correlation of a discrete sequence
+
+Examples
+
+x = [1,2,3,4,5];//input sequence
+[Rxx] = auto_correlation(x);
+L = length(Rxx);
+M = floor(L/2);
+plot2d3('gnn',[-M:M],Rxx)
+title('Auto Correlation Sequence')
+
+Authors
+
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+
+[1]. An Introduction to Analog and Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
+[2]. Electronic Communications Systems-Fundamentals through Advanced, Wayne Tomasi,5th Edition,2009.

@@ -1,0 +1,32 @@
+HammingDistance
+
+Calculate the Hamming Distance between two code words
+
+Calling Sequence
+
+[Hamming_Distance] = HammingDistance(code1,code2)
+
+Parameters
+
+code1:First codeword
+code2:Second codeword
+
+Description
+
+HammingDistance-It is used to calculate the hamming distance between two codewords
+
+Examples
+
+code1 = [0,1,1,1,0,0,1];
+code2 = [1,1,0,0,1,0,1];
+[Hamming_Distance] = HammingDistance(code1,code2);
+
+Authors
+
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+
+[1]. Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
+[2]. Electronic Communications Systems-Fundamentals through Advanced, Wayne Tomasi,5th Edition,2009.

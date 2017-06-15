@@ -1,0 +1,39 @@
+HammingEncode
+
+Hamming Encoding-Error Control Coding-H(7,4)
+
+Calling Sequence
+
+[c,b,m] = HammingEncode(m3,m2,m1,m0)
+
+Parameters
+
+m3:1bit(MSb) of Message word
+m2:2bit of Message word
+m1:3bit of Message word
+m0:4bit of Message word
+m:Message word
+b:parity bits
+c:code word
+ 
+Description
+
+HammingEnocde-It generates H(7,4) hamming error control codeword.
+
+Examples
+
+m3 = [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1];
+m2 = [0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1];
+m1 = [0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1];
+m0 = [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1];
+[c,b,m] = HammingEncode(m3,m2,m1,m0);
+
+Authors
+
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+
+[1]. Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
+[2]. Electronic Communications Systems-Fundamentals through Advanced, Wayne Tomasi,5th Edition,2009.

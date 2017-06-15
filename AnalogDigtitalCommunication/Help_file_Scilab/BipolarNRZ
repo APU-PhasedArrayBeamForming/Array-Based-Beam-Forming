@@ -1,0 +1,34 @@
+BipolarNRZ
+
+BiPolar Non-Return to Zero Line Coding Technique
+
+Calling Sequence
+
+[Bipolar_out] = BipolarNRZ(x)
+
+Parameters
+
+x: Digital information signal
+Bipolar_out: Bipolar NRZ output
+
+Description
+
+BipolarNRZ -It generates polar NRZ line coded output for the given input data x.
+
+Examples
+
+x =[1,1,0,0,0,1,1,0];//digital information signal
+Bipolar_out = BipolarNRZ(x);
+plot2d2(Bipolar_out);
+disp(Bipolar_out);
+
+
+Authors
+
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+
+[1]. An Introduction to Analog and Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
+[2]. Electronic Communications Systems-Fundamentals through Advanced, Wayne Tomasi,5th Edition,2009.

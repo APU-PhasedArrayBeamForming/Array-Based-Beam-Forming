@@ -1,0 +1,35 @@
+ConvolCode
+
+Convolutional Encoding -Time Domain Approach-Error correction code
+
+Calling Sequence
+
+[x] = ConvolCode(g1,g2,m)
+
+Parameters
+
+g1:Input top-adder sequence
+g2:Input bottom-adder sequence
+m:message sequence
+x:convolutional coder output
+
+Description
+
+ConvolCode -It generates Analog FM modulated signal
+
+Examples
+
+g1 = [1,1,1];
+g2 = [1,0,1];
+m = [1,1,0,0,1];
+x = ConvolCode(g1,g2,m);
+disp(x,'Convolutional Coder output:=')
+
+Authors
+
+.R.Senthilkumar, Assistant Professor, Department of ECE,Institute of Road and Transport Technology,Tamilnadu,India-638 316
+.rsenthil_signalprocess@in.com
+
+Bibliography
+
+[1]. Digital Communications,Simon Haykin,Wiley India Edition,Reprint 2010.
