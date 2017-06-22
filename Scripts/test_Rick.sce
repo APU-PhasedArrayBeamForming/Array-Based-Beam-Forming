@@ -1,4 +1,7 @@
-y=wavread("./Fc100KHz_2MSPS_1KHzModulation_June12_2017.wav");
+//y=wavread("./Fc100KHz_2MSPS_1KHzModulation_June12_2017.wav");
+y=wavread("C:./SDRuno_20170622_214335Z_105500kHz.wav");
+//y=wavread("C:\Users\Justin\Desktop\firstconversion.wav");
+
 
 //I/Q data broken apart
 f = 5*10^3      //double f = 5*10^3
@@ -27,7 +30,7 @@ D = exp(%i*O*t);
 B = E./D;
 Br = real(B);//this is same as
 //B1 = Br.*cos(O*t); //this
-//downsampling_Br = Br(1:100:length(Br));
+downsampling_Br = Br(1:100:length(Br));
 
 //plot(abs(fE));
 
@@ -35,8 +38,10 @@ Br = real(B);//this is same as
 
 df = 1/(n*dt);
 m = n
+//m=n/100
 
 fE = fft(E(1:m), -1);
+//fE = fft(downsampling_Br(1:m), -1);
 
 for i = 1:m
     if(i<(m/2)+1) then
