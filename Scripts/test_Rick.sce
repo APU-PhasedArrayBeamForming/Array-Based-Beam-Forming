@@ -1,18 +1,19 @@
-//y=wavread("./Fc100KHz_2MSPS_1KHzModulation_June12_2017.wav");
-y=wavread("C:./SDRuno_20170622_214335Z_105500kHz.wav");
-//y=wavread("C:\Users\Justin\Desktop\firstconversion.wav");
-
+//y=wavread("C:\Users\Justin\Desktop\Array-Based-Beam-Forming\Scripts\Fc100KHz_2MSPS_1KHzModulation_June12_2017.wav");
+//y=wavread("C:\Users\Justin\Desktop\Array-Based-Beam-Forming\Scripts\SDRuno_20170622_214335Z_105500kHz.wav");
+//y=wavread("C:\Users\Justin\Desktop\outputfile1.wav");
+//y=wavread("C:\Users\Justin\Documents\Visual Studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\outputfile2.wav");
+y=wavread("C:\Users\Justin\Documents\Visual Studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\outputfile1.wav");
 
 //I/Q data broken apart
-f = 5*10^3      //double f = 5*10^3
+f = 5*10^3      
 
-O = 2*%pi*f     //double O = f*2*Math.PI
-I = y(1,:);     //double []I = new double[n]  //n is size of I
-Q = y(2,:);     //double []Q = new double [m]  //m is size of Q
-n = size(I,2)   //double n = size.length()
+O = 2*%pi*f     
+I = y(1,:);     
+Q = y(2,:);     
+n = size(I,2)   
 p = floor(log(n)/log(2)); //n = 
 n = 2^p
-n=262144
+//n=262144
 I = I(1:n);
 Q = Q(1:n);
 
@@ -25,12 +26,13 @@ t = linspace(0,dt*(n-1),n)
 E = I + %i*Q;
 D = exp(%i*O*t);
 
+downsampling_E = E(1:16:length(E));
 
 //Removes carrier
 B = E./D;
 Br = real(B);//this is same as
 //B1 = Br.*cos(O*t); //this
-downsampling_Br = Br(1:100:length(Br));
+//downsampling_Br = Br(1:8:length(Br));
 
 //plot(abs(fE));
 
@@ -38,10 +40,10 @@ downsampling_Br = Br(1:100:length(Br));
 
 df = 1/(n*dt);
 m = n
-//m=n/100
+//m=n/16
 
 fE = fft(E(1:m), -1);
-//fE = fft(downsampling_Br(1:m), -1);
+//fE = fft(downsampling_E(1:m), -1);
 
 for i = 1:m
     if(i<(m/2)+1) then
@@ -65,7 +67,7 @@ g(N+1:512)=0
 Z=convol(h,E)
 Zf=fft(Z)
 //plot(fr(1:m)',abs(Z(1:m)))
-plot(fr(1:m)',abs(Zf(1:m)))
+//plot(fr(1:m)',abs(Zf(1:m)))
 
 
     //downsampling_fE = fE(1:10:length(fE));
@@ -76,7 +78,7 @@ plot(fr(1:m)',abs(Zf(1:m)))
 
     //original plot commands
 //plot(fr,abs(fE));
-//plot(fr(1:m)',abs(fE(1:m)))
+plot(fr(1:m)',abs(fE(1:m)))
 //plot(fr(1:m)',abs(fE(1:m)))
 //Qmu=lin2mu(Q)
 //wavwrite(Qmu,samp,'./foo.wav');
