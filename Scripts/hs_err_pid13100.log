@@ -1,0 +1,481 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000071b3aeb1, pid=13100, tid=6548
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_40-b26) (build 1.8.0_40-b26)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.40-b25 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x15aeb1]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000054b9e000):  JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=6548, stack(0x000000005aa00000,0x000000005c890000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000000
+
+Registers:
+RAX=0x0000000000000000, RBX=0x0000000054b9e000, RCX=0x0000000054b9e000, RDX=0x00000000f0053108
+RSP=0x000000005c88d3f0, RBP=0x0000000000000000, RSI=0x0000000000000000, RDI=0x0000000000800000
+R8 =0x0000000000000000, R9 =0x0000000000800000, R10=0x0000000000000000, R11=0x0000000000000200
+R12=0x0000000000000000, R13=0x0000000003e871a8, R14=0x0000000054b9e1f8, R15=0x0000000054b9e000
+RIP=0x0000000071b3aeb1, EFLAGS=0x0000000000010246
+
+Top of Stack: (sp=0x000000005c88d3f0)
+0x000000005c88d3f0:   0000000000000166 0000000071b1fb8c
+0x000000005c88d400:   fffffffffffffffe 0000000054b9e000
+0x000000005c88d410:   0000000000000000 0000000008e86c09
+0x000000005c88d420:   0000000054b9e000 000000003f519b28
+0x000000005c88d430:   000000000000009f 0000000071fd6980
+0x000000005c88d440:   0000000000000000 0000000008e86734
+0x000000005c88d450:   0000000072170d50 0000000000000166
+0x000000005c88d460:   00000001ec07a040 0000000054b9e000
+0x000000005c88d470:   00000001ec07a040 00000000f0039ee8
+0x000000005c88d480:   000000005c88d520 000000001fa35e34
+0x000000005c88d490:   0000000003e871a8 000000005c88d500
+0x000000005c88d4a0:   00000000f0039ee8 000000001fa27a70
+0x000000005c88d4b0:   000000005c88d578 000000001fa35b62
+0x000000005c88d4c0:   000000005c88d4c0 0000000003e871a8
+0x000000005c88d4d0:   000000005c88d520 0000000003e87b38
+0x000000005c88d4e0:   0000000000000000 0000000003e871a8 
+
+Instructions: (pc=0x0000000071b3aeb1)
+0x0000000071b3ae91:   00 48 83 7b 08 00 48 89 5c 24 30 48 c7 44 24 38
+0x0000000071b3aea1:   00 00 00 00 74 0a 48 8d 4c 24 30 e8 0f c9 11 00
+0x0000000071b3aeb1:   4c 8b 4d 00 85 f6 0f 88 1d 01 00 00 85 ff 0f 88
+0x0000000071b3aec1:   15 01 00 00 0f b6 15 15 ee 69 00 41 b8 10 00 00 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x0000000054b9e000 is a thread
+RCX=0x0000000054b9e000 is a thread
+RDX=0x00000000f0053108 is an oop
+java.lang.OutOfMemoryError 
+ - klass: 'java/lang/OutOfMemoryError'
+RSP=0x000000005c88d3f0 is pointing into the stack for thread: 0x0000000054b9e000
+RBP=0x0000000000000000 is an unknown value
+RSI=0x0000000000000000 is an unknown value
+RDI=0x0000000000800000 is pointing into the stack for thread: 0x00000000174c0800
+R8 =0x0000000000000000 is an unknown value
+R9 =0x0000000000800000 is pointing into the stack for thread: 0x00000000174c0800
+R10=0x0000000000000000 is an unknown value
+R11=0x0000000000000200 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13={method} {0x0000000003e871b0} 'getDataY' '(I)Ljava/lang/Object;' in 'org/scilab/modules/graphic_objects/PolylineDataJNI'
+R14=0x0000000054b9e1f8 is an unknown value
+R15=0x0000000054b9e000 is a thread
+
+
+Stack: [0x000000005aa00000,0x000000005c890000],  sp=0x000000005c88d3f0,  free space=31284k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.scilab.modules.graphic_objects.PolylineDataJNI.getDataY(I)Ljava/lang/Object;+0
+j  org.scilab.modules.graphic_objects.PolylineData.getDataY(I)Ljava/lang/Object;+1
+j  org.scilab.modules.gui.editor.EntityPicker.getPixelsData(Ljava/lang/Integer;Ljava/lang/Integer;)[[D+18
+j  org.scilab.modules.gui.editor.EntityPicker.isOverLine(Ljava/lang/Integer;Ljava/lang/Integer;II)I+2
+j  org.scilab.modules.gui.editor.EntityPicker.pick(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;+172
+j  org.scilab.modules.gui.editor.Editor.tryPickAnyObject([Ljava/lang/Integer;)Ljava/lang/Integer;+52
+j  org.scilab.modules.gui.editor.Editor.onLeftMouseDown(Ljava/awt/event/MouseEvent;)V+70
+j  org.scilab.modules.gui.editor.EditorEventListener.mousePressed(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.AWTEventMulticaster.mousePressed(Ljava/awt/event/MouseEvent;)V+21
+j  java.awt.AWTEventMulticaster.mousePressed(Ljava/awt/event/MouseEvent;)V+8
+J 4774 C1 java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V (100 bytes) @ 0x0000000020800d84 [0x0000000020800920+0x464]
+J 4773 C1 javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V (27 bytes) @ 0x000000002080157c [0x0000000020801360+0x21c]
+J 6772 C2 java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V (22 bytes) @ 0x000000002077ac80 [0x000000002077ab40+0x140]
+J 6660 C1 java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V (883 bytes) @ 0x0000000020e86724 [0x0000000020e81240+0x54e4]
+J 6665 C2 java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V (129 bytes) @ 0x0000000020e95584 [0x0000000020e94f80+0x604]
+J 4038 C2 java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V (350 bytes) @ 0x0000000020358924 [0x00000000203583a0+0x584]
+J 6665 C2 java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V (129 bytes) @ 0x0000000020e952d8 [0x0000000020e94f80+0x358]
+J 6667 C2 java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V (23 bytes) @ 0x0000000020e7d8cc [0x0000000020e7d880+0x4c]
+J 4053 C2 java.awt.EventQueue$3.run()Ljava/lang/Object; (5 bytes) @ 0x000000002026ca44 [0x000000002026c660+0x3e4]
+v  ~StubRoutines::call_stub
+J 1248  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x000000001fed8166 [0x000000001fed8100+0x66]
+J 4623 C2 java.awt.EventQueue$4.run()Ljava/lang/Object; (5 bytes) @ 0x00000000203e4038 [0x00000000203e3f20+0x118]
+v  ~StubRoutines::call_stub
+J 1248  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x000000001fed8166 [0x000000001fed8100+0x66]
+J 4799 C2 java.awt.EventDispatchThread.pumpOneEventForFilters(I)V (295 bytes) @ 0x000000002082daa4 [0x000000002082d600+0x4a4]
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000005dafd000 JavaThread "Thread-32" [_thread_blocked, id=6060, stack(0x00000000c1e80000,0x00000000c9e80000)]
+  0x000000005daf9000 JavaThread "Thread-31" [_thread_blocked, id=11224, stack(0x00000000e3480000,0x00000000e5310000)]
+  0x0000000054afc800 JavaThread "SwingWorker-pool-2-thread-2" daemon [_thread_blocked, id=6092, stack(0x00000000d3d10000,0x00000000d5ba0000)]
+  0x0000000054afa800 JavaThread "SwingWorker-pool-2-thread-1" daemon [_thread_blocked, id=11632, stack(0x00000000d1e80000,0x00000000d3d10000)]
+  0x000000005d721000 JavaThread "TimerQueue" daemon [_thread_blocked, id=9648, stack(0x00000000744c0000,0x0000000076350000)]
+  0x000000005d1eb000 JavaThread "main-SharedResourceRunner" daemon [_thread_blocked, id=6652, stack(0x000000005e050000,0x000000005fee0000)]
+=>0x0000000054b9e000 JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=6548, stack(0x000000005aa00000,0x000000005c890000)]
+  0x0000000054b9d000 JavaThread "AWT-Windows" daemon [_thread_blocked, id=6276, stack(0x0000000058b70000,0x000000005aa00000)]
+  0x0000000054b98800 JavaThread "AWT-Shutdown" [_thread_blocked, id=1948, stack(0x0000000056ce0000,0x0000000058b70000)]
+  0x0000000054a97800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=8940, stack(0x0000000054e50000,0x0000000056ce0000)]
+  0x000000003f58d800 JavaThread "Service Thread" daemon [_thread_blocked, id=4480, stack(0x0000000050830000,0x00000000526c0000)]
+  0x000000003f520800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=1972, stack(0x000000004e9a0000,0x0000000050830000)]
+  0x000000003f51e000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=4752, stack(0x000000004cb10000,0x000000004e9a0000)]
+  0x000000003f518000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=948, stack(0x000000004ac80000,0x000000004cb10000)]
+  0x00000000175dd000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=1208, stack(0x0000000048df0000,0x000000004ac80000)]
+  0x00000000175dc000 JavaThread "Attach Listener" daemon [_thread_blocked, id=10164, stack(0x0000000046f60000,0x0000000048df0000)]
+  0x000000003f50d000 JavaThread "Finalizer" daemon [_thread_blocked, id=10412, stack(0x00000000450d0000,0x0000000046f60000)]
+  0x000000003f50c800 JavaThread "Reference Handler" daemon [_thread_blocked, id=1968, stack(0x0000000043240000,0x00000000450d0000)]
+  0x00000000174c0800 JavaThread "main" [_thread_in_native, id=8948, stack(0x0000000000400000,0x0000000002290000)]
+
+Other Threads:
+  0x00000000175cf000 VMThread [stack: 0x00000000413b0000,0x0000000043240000] [id=932]
+  0x000000003f5a4800 WatcherThread [stack: 0x00000000526c0000,0x0000000054550000] [id=2376]
+
+VM state:synchronizing (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000000174eda80] Threads_lock - owner thread: 0x00000000175cf000
+
+Heap:
+ PSYoungGen      total 58368K, used 225K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 29696K, 0% used [0x00000000fab00000,0x00000000fab386c0,0x00000000fc800000)
+  from space 28672K, 0% used [0x00000000fe400000,0x00000000fe400000,0x0000000100000000)
+  to   space 28672K, 0% used [0x00000000fc800000,0x00000000fc800000,0x00000000fe400000)
+ ParOldGen       total 175104K, used 129491K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 73% used [0x00000000f0000000,0x00000000f7e74db0,0x00000000fab00000)
+ Metaspace       used 35548K, capacity 35811K, committed 36352K, reserved 1081344K
+  class space    used 4411K, capacity 4477K, committed 4608K, reserved 1048576K
+
+Card table byte_map: [0x000000000ac60000,0x000000000acf0000] byte_map_base: 0x000000000a4e0000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000721e4040
+ Begin Bits: [0x000000003e260000, 0x000000003e660000)
+ End Bits:   [0x000000003e660000, 0x000000003ea60000)
+
+Polling page: 0x000000000aa10000
+
+CodeCache: size=245760Kb used=20765Kb max_used=21267Kb free=224994Kb
+ bounds [0x000000001fa20000, 0x0000000020f50000, 0x000000002ea20000]
+ total_blobs=6764 nmethods=5778 adapters=894
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 627.079 Thread 0x000000003f520800 6983       3       sun.font.PhysicalFont::equals (38 bytes)
+Event: 627.080 Thread 0x000000003f520800 nmethod 6983 0x00000000203b9250 code [0x00000000203b93e0, 0x00000000203b9908]
+Event: 627.083 Thread 0x000000003f520800 6985       3       sun.font.StandardGlyphVector::getLayoutFlags (149 bytes)
+Event: 627.083 Thread 0x000000003f51e000 nmethod 6984 0x0000000020263490 code [0x0000000020263640, 0x0000000020263b58]
+Event: 627.083 Thread 0x000000003f520800 nmethod 6985 0x0000000020017190 code [0x0000000020017320, 0x0000000020017850]
+Event: 627.084 Thread 0x000000003f520800 6987       3       com.jogamp.common.nio.Buffers::getDirectBufferByteOffset (160 bytes)
+Event: 627.084 Thread 0x000000003f520800 nmethod 6987 0x00000000204c9dd0 code [0x00000000204ca060, 0x00000000204cb9e8]
+Event: 627.084 Thread 0x000000003f520800 6986       3       sun.java2d.loops.GraphicsPrimitive::getNativePrim (5 bytes)
+Event: 627.084 Thread 0x000000003f520800 nmethod 6986 0x000000001fc5f990 code [0x000000001fc5fae0, 0x000000001fc5fc30]
+Event: 627.087 Thread 0x00000000175dd000 nmethod 6971 0x0000000020e90a10 code [0x0000000020e90c20, 0x0000000020e919d0]
+
+GC Heap History (10 events):
+Event: 628.102 GC heap before
+{Heap before GC invocations=13 (full 3):
+ PSYoungGen      total 61952K, used 30317K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 38912K, 77% used [0x00000000fab00000,0x00000000fc85b490,0x00000000fd100000)
+  from space 23040K, 1% used [0x00000000fd100000,0x00000000fd140000,0x00000000fe780000)
+  to   space 24576K, 0% used [0x00000000fe800000,0x00000000fe800000,0x0000000100000000)
+ ParOldGen       total 175104K, used 125891K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 71% used [0x00000000f0000000,0x00000000f7af0fa0,0x00000000fab00000)
+ Metaspace       used 35558K, capacity 35829K, committed 36352K, reserved 1081344K
+  class space    used 4412K, capacity 4480K, committed 4608K, reserved 1048576K
+Event: 628.110 GC heap after
+Heap after GC invocations=13 (full 3):
+ PSYoungGen      total 56320K, used 24239K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fca00000)
+  from space 24576K, 98% used [0x00000000fe800000,0x00000000fffabc28,0x0000000100000000)
+  to   space 27648K, 0% used [0x00000000fca00000,0x00000000fca00000,0x00000000fe500000)
+ ParOldGen       total 175104K, used 140317K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 80% used [0x00000000f0000000,0x00000000f89077d0,0x00000000fab00000)
+ Metaspace       used 35558K, capacity 35829K, committed 36352K, reserved 1081344K
+  class space    used 4412K, capacity 4480K, committed 4608K, reserved 1048576K
+}
+Event: 628.110 GC heap before
+{Heap before GC invocations=14 (full 3):
+ PSYoungGen      total 56320K, used 24239K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fca00000)
+  from space 24576K, 98% used [0x00000000fe800000,0x00000000fffabc28,0x0000000100000000)
+  to   space 27648K, 0% used [0x00000000fca00000,0x00000000fca00000,0x00000000fe500000)
+ ParOldGen       total 175104K, used 140317K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 80% used [0x00000000f0000000,0x00000000f89077d0,0x00000000fab00000)
+ Metaspace       used 35558K, capacity 35829K, committed 36352K, reserved 1081344K
+  class space    used 4412K, capacity 4480K, committed 4608K, reserved 1048576K
+Event: 628.112 GC heap after
+Heap after GC invocations=14 (full 3):
+ PSYoungGen      total 56320K, used 24239K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fca00000)
+  from space 24576K, 98% used [0x00000000fca00000,0x00000000fe1abc28,0x00000000fe200000)
+  to   space 28672K, 0% used [0x00000000fe400000,0x00000000fe400000,0x0000000100000000)
+ ParOldGen       total 175104K, used 140317K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 80% used [0x00000000f0000000,0x00000000f89077d0,0x00000000fab00000)
+ Metaspace       used 35558K, capacity 35829K, committed 36352K, reserved 1081344K
+  class space    used 4412K, capacity 4480K, committed 4608K, reserved 1048576K
+}
+Event: 628.113 GC heap before
+{Heap before GC invocations=15 (full 4):
+ PSYoungGen      total 56320K, used 24239K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fca00000)
+  from space 24576K, 98% used [0x00000000fca00000,0x00000000fe1abc28,0x00000000fe200000)
+  to   space 28672K, 0% used [0x00000000fe400000,0x00000000fe400000,0x0000000100000000)
+ ParOldGen       total 175104K, used 140317K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 80% used [0x00000000f0000000,0x00000000f89077d0,0x00000000fab00000)
+ Metaspace       used 35558K, capacity 35829K, committed 36352K, reserved 1081344K
+  class space    used 4412K, capacity 4480K, committed 4608K, reserved 1048576K
+Event: 628.164 GC heap after
+Heap after GC invocations=15 (full 4):
+ PSYoungGen      total 56320K, used 0K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fca00000)
+  from space 24576K, 0% used [0x00000000fca00000,0x00000000fca00000,0x00000000fe200000)
+  to   space 28672K, 0% used [0x00000000fe400000,0x00000000fe400000,0x0000000100000000)
+ ParOldGen       total 175104K, used 132963K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 75% used [0x00000000f0000000,0x00000000f81d8ea0,0x00000000fab00000)
+ Metaspace       used 35558K, capacity 35829K, committed 36352K, reserved 1081344K
+  class space    used 4412K, capacity 4480K, committed 4608K, reserved 1048576K
+}
+Event: 628.164 GC heap before
+{Heap before GC invocations=16 (full 4):
+ PSYoungGen      total 56320K, used 0K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fca00000)
+  from space 24576K, 0% used [0x00000000fca00000,0x00000000fca00000,0x00000000fe200000)
+  to   space 28672K, 0% used [0x00000000fe400000,0x00000000fe400000,0x0000000100000000)
+ ParOldGen       total 175104K, used 132963K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 75% used [0x00000000f0000000,0x00000000f81d8ea0,0x00000000fab00000)
+ Metaspace       used 35558K, capacity 35829K, committed 36352K, reserved 1081344K
+  class space    used 4412K, capacity 4480K, committed 4608K, reserved 1048576K
+Event: 628.165 GC heap after
+Heap after GC invocations=16 (full 4):
+ PSYoungGen      total 58368K, used 0K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 29696K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fc800000)
+  from space 28672K, 0% used [0x00000000fe400000,0x00000000fe400000,0x0000000100000000)
+  to   space 28672K, 0% used [0x00000000fc800000,0x00000000fc800000,0x00000000fe400000)
+ ParOldGen       total 175104K, used 132963K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 75% used [0x00000000f0000000,0x00000000f81d8ea0,0x00000000fab00000)
+ Metaspace       used 35558K, capacity 35829K, committed 36352K, reserved 1081344K
+  class space    used 4412K, capacity 4480K, committed 4608K, reserved 1048576K
+}
+Event: 628.165 GC heap before
+{Heap before GC invocations=17 (full 5):
+ PSYoungGen      total 58368K, used 0K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 29696K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fc800000)
+  from space 28672K, 0% used [0x00000000fe400000,0x00000000fe400000,0x0000000100000000)
+  to   space 28672K, 0% used [0x00000000fc800000,0x00000000fc800000,0x00000000fe400000)
+ ParOldGen       total 175104K, used 132963K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 75% used [0x00000000f0000000,0x00000000f81d8ea0,0x00000000fab00000)
+ Metaspace       used 35558K, capacity 35829K, committed 36352K, reserved 1081344K
+  class space    used 4412K, capacity 4480K, committed 4608K, reserved 1048576K
+Event: 628.269 GC heap after
+Heap after GC invocations=17 (full 5):
+ PSYoungGen      total 58368K, used 0K [0x00000000fab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 29696K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fc800000)
+  from space 28672K, 0% used [0x00000000fe400000,0x00000000fe400000,0x0000000100000000)
+  to   space 28672K, 0% used [0x00000000fc800000,0x00000000fc800000,0x00000000fe400000)
+ ParOldGen       total 175104K, used 129491K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 73% used [0x00000000f0000000,0x00000000f7e74db0,0x00000000fab00000)
+ Metaspace       used 35548K, capacity 35811K, committed 36352K, reserved 1081344K
+  class space    used 4411K, capacity 4477K, committed 4608K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 514.079 Thread 0x0000000054b9e000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000020d52984 method=org.scilab.forge.scirenderer.implementation.jogl.clipping.JoGLClippingPlane.setGLEquation()V @ 48
+Event: 524.447 Thread 0x0000000054b9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000020651ff8 method=org.scilab.modules.scinotes.ScilabLexerConstants.isMatchable(I)Z @ 20
+Event: 526.764 Thread 0x0000000054b9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000200e2a5c method=javax.swing.text.AbstractDocument$BranchElement.getElementIndex(I)I @ 57
+Event: 539.474 Thread 0x00000000174c0800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000020dafb2c method=java.text.DecimalFormat.applyPattern(Ljava/lang/String;Z)V @ 321
+Event: 539.478 Thread 0x00000000174c0800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000000002068fd98 method=java.text.DecimalFormat.subformat(Ljava/lang/StringBuffer;Ljava/text/Format$FieldDelegate;ZZIIII)Ljava/lang/StringBuffer; @ 425
+Event: 539.478 Thread 0x00000000174c0800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000000002068fd98 method=java.text.DecimalFormat.subformat(Ljava/lang/StringBuffer;Ljava/text/Format$FieldDelegate;ZZIIII)Ljava/lang/StringBuffer; @ 425
+Event: 539.478 Thread 0x00000000174c0800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000000002068fd98 method=java.text.DecimalFormat.subformat(Ljava/lang/StringBuffer;Ljava/text/Format$FieldDelegate;ZZIIII)Ljava/lang/StringBuffer; @ 425
+Event: 539.478 Thread 0x00000000174c0800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000000002068fd98 method=java.text.DecimalFormat.subformat(Ljava/lang/StringBuffer;Ljava/text/Format$FieldDelegate;ZZIIII)Ljava/lang/StringBuffer; @ 425
+Event: 547.266 Thread 0x0000000054b9e000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00000000200bbdb0 method=java.lang.Class.reflectionData()Ljava/lang/Class$ReflectionData; @ 24
+Event: 570.351 Thread 0x0000000054b9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000020f03b0c method=javax.swing.text.WrappedPlainView$WrappedLine.viewToModel(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I @ 205
+
+Internal exceptions (10 events):
+Event: 497.559 Thread 0x00000000174c0800 Exception <a 'java/lang/NullPointerException'> (0x00000000fae33550) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u40\3098\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 509.431 Thread 0x0000000054b9e000 Implicit null exception at 0x0000000020e56d1b to 0x0000000020e5a241
+Event: 509.432 Thread 0x0000000054b9e000 Implicit null exception at 0x0000000020e46a40 to 0x0000000020e4a055
+Event: 509.432 Thread 0x0000000054b9e000 Implicit null exception at 0x0000000020986417 to 0x0000000020988589
+Event: 510.809 Thread 0x0000000054b9e000 Implicit null exception at 0x000000002002a43e to 0x000000002002a539
+Event: 510.811 Thread 0x0000000054b9e000 Implicit null exception at 0x000000002007a7a0 to 0x000000002007abf9
+Event: 511.895 Thread 0x0000000054b9e000 Implicit null exception at 0x00000000200c1324 to 0x00000000200c25f1
+Event: 524.176 Thread 0x00000000174c0800 Exception <a 'java/lang/NullPointerException'> (0x00000000fc686358) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u40\3098\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 547.266 Thread 0x0000000054b9e000 Implicit null exception at 0x00000000200bb823 to 0x00000000200bbd95
+Event: 628.269 Thread 0x0000000054b9e000 Exception <a 'java/lang/OutOfMemoryError'> (0x00000000f0053108) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u40\3098\hotspot\src\share\vm\gc_interface/collectedHeap.inline.hpp, line 159]
+
+Events (10 events):
+Event: 628.071 loading class org/scilab/modules/gui/editor/ObjectSearcher
+Event: 628.071 loading class org/scilab/modules/gui/editor/ObjectSearcher done
+Event: 628.075 loading class org/scilab/modules/gui/editor/LegendHandler
+Event: 628.075 loading class org/scilab/modules/gui/editor/LegendHandler done
+Event: 628.075 loading class org/scilab/modules/graphic_objects/PolylineData
+Event: 628.075 loading class org/scilab/modules/graphic_objects/PolylineData done
+Event: 628.076 loading class org/scilab/modules/graphic_objects/PolylineDataJNI
+Event: 628.076 loading class org/scilab/modules/graphic_objects/PolylineDataJNI done
+Event: 628.102 Executing VM operation: ParallelGCFailedAllocation
+Event: 628.269 Executing VM operation: ParallelGCFailedAllocation done
+
+
+Dynamic libraries:
+0x0000000140000000 - 0x00000001400e6000 	C:\Program Files\scilab-6.0.0\bin\wscilex.exe
+0x00007fff84220000 - 0x00007fff843f1000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007fff81c50000 - 0x00007fff81cfc000 	C:\Windows\System32\KERNEL32.DLL
+0x00007fff807e0000 - 0x00007fff809fd000 	C:\Windows\System32\KERNELBASE.dll
+0x0000000007f10000 - 0x0000000008294000 	C:\Program Files\scilab-6.0.0\bin\ast.dll
+0x0000000180000000 - 0x0000000180011000 	C:\Program Files\scilab-6.0.0\bin\sciconsole.dll
+0x00000000082a0000 - 0x00000000082ca000 	C:\Program Files\scilab-6.0.0\bin\core.dll
+0x00000000000c0000 - 0x00000000000d6000 	C:\Program Files\scilab-6.0.0\bin\output_stream.dll
+0x00007fff824a0000 - 0x00007fff82605000 	C:\Windows\System32\USER32.dll
+0x00007fff81300000 - 0x00007fff8131e000 	C:\Windows\System32\win32u.dll
+0x00007fff840e0000 - 0x00007fff84114000 	C:\Windows\System32\GDI32.dll
+0x00007fff81580000 - 0x00007fff81702000 	C:\Windows\System32\gdi32full.dll
+0x00000000082d0000 - 0x00000000082e1000 	C:\Program Files\scilab-6.0.0\bin\scilab_windows.dll
+0x00007fff82000000 - 0x00007fff820a2000 	C:\Windows\System32\ADVAPI32.dll
+0x00007fff613e0000 - 0x00007fff61486000 	C:\Program Files\scilab-6.0.0\bin\MSVCP120.dll
+0x00007fff81f60000 - 0x00007fff81ffe000 	C:\Windows\System32\msvcrt.dll
+0x00007fff81f00000 - 0x00007fff81f59000 	C:\Windows\System32\sechost.dll
+0x00007fff82370000 - 0x00007fff82491000 	C:\Windows\System32\RPCRT4.dll
+0x00007fff60b60000 - 0x00007fff60c4f000 	C:\Program Files\scilab-6.0.0\bin\MSVCR120.dll
+0x0000000008300000 - 0x000000000830f000 	C:\Program Files\scilab-6.0.0\bin\scicommons.dll
+0x0000000008320000 - 0x0000000008335000 	C:\Program Files\scilab-6.0.0\bin\scicompletion.dll
+0x00007fff84120000 - 0x00007fff8421a000 	C:\Windows\System32\COMDLG32.dll
+0x00007fff81870000 - 0x00007fff81b38000 	C:\Windows\System32\combase.dll
+0x00007fff81480000 - 0x00007fff81575000 	C:\Windows\System32\ucrtbase.dll
+0x00007fff80770000 - 0x00007fff807da000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007fff813d0000 - 0x00007fff81479000 	C:\Windows\System32\shcore.dll
+0x00007fff81810000 - 0x00007fff81862000 	C:\Windows\System32\SHLWAPI.dll
+0x00007fff82620000 - 0x00007fff83b28000 	C:\Windows\System32\SHELL32.dll
+0x00007fff80a00000 - 0x00007fff80a42000 	C:\Windows\System32\cfgmgr32.dll
+0x00007fff80c20000 - 0x00007fff812fa000 	C:\Windows\System32\windows.storage.dll
+0x00007fff806b0000 - 0x00007fff806fc000 	C:\Windows\System32\powrprof.dll
+0x00007fff80700000 - 0x00007fff8070f000 	C:\Windows\System32\kernel.appcore.dll
+0x0000000008350000 - 0x000000000836b000 	C:\Program Files\scilab-6.0.0\bin\fileio.dll
+0x00007fff80690000 - 0x00007fff806a4000 	C:\Windows\System32\profapi.dll
+0x0000000008370000 - 0x0000000008385000 	C:\Program Files\scilab-6.0.0\bin\scihistory_manager.dll
+0x00000000083b0000 - 0x00000000083c1000 	C:\Program Files\scilab-6.0.0\bin\libjvm.dll
+0x00000000083e0000 - 0x00000000083f0000 	C:\Program Files\scilab-6.0.0\bin\scilocalization.dll
+0x0000000008430000 - 0x0000000008443000 	C:\Program Files\scilab-6.0.0\bin\libintl.dll
+0x0000000008400000 - 0x000000000841f000 	C:\Program Files\scilab-6.0.0\bin\functions_manager.dll
+0x0000000008460000 - 0x0000000008472000 	C:\Program Files\scilab-6.0.0\bin\string.dll
+0x0000000008480000 - 0x0000000008489000 	C:\Program Files\scilab-6.0.0\bin\dynamic_link.dll
+0x0000000008520000 - 0x000000000855b000 	C:\Program Files\scilab-6.0.0\bin\io.dll
+0x00007fff68840000 - 0x00007fff6887b000 	C:\Program Files\scilab-6.0.0\bin\elementary_functions_f.dll
+0x00000000084c0000 - 0x0000000008505000 	C:\Program Files\scilab-6.0.0\bin\elementary_functions.dll
+0x00007fff73870000 - 0x00007fff73894000 	C:\Program Files\scilab-6.0.0\bin\polynomials_f.dll
+0x00007fff7eb60000 - 0x00007fff7eb6c000 	C:\Program Files\scilab-6.0.0\bin\linear_algebra_f.dll
+0x00000000085b0000 - 0x000000000862e000 	C:\Program Files\scilab-6.0.0\bin\coverage.dll
+0x00007fff42db0000 - 0x00007fff43f97000 	C:\Program Files\scilab-6.0.0\bin\blasplus.dll
+0x00007fff415d0000 - 0x00007fff42da6000 	C:\Program Files\scilab-6.0.0\bin\lapack.dll
+0x0000000008640000 - 0x0000000008647000 	C:\Program Files\scilab-6.0.0\bin\threads.dll
+0x0000000008660000 - 0x0000000008667000 	C:\Program Files\scilab-6.0.0\bin\GetWindowsVersion.dll
+0x0000000008680000 - 0x00000000086e5000 	C:\Program Files\scilab-6.0.0\bin\api_scilab.dll
+0x0000000008700000 - 0x0000000008719000 	C:\Program Files\scilab-6.0.0\bin\fftw.dll
+0x0000000008730000 - 0x00000000087ae000 	C:\Program Files\scilab-6.0.0\bin\graphics.dll
+0x00000000087c0000 - 0x000000000881c000 	C:\Program Files\scilab-6.0.0\bin\scigui.dll
+0x0000000008820000 - 0x000000000882e000 	C:\Program Files\scilab-6.0.0\bin\preferences.dll
+0x0000000008860000 - 0x000000000886f000 	C:\Program Files\scilab-6.0.0\bin\tclsci.dll
+0x0000000008880000 - 0x00000000088a2000 	C:\Program Files\scilab-6.0.0\bin\sciui_data.dll
+0x00000000088c0000 - 0x00000000088d7000 	C:\Program Files\scilab-6.0.0\bin\windows_tools.dll
+0x00007fff60a10000 - 0x00007fff60b5a000 	C:\Program Files\scilab-6.0.0\bin\libxml2.dll
+0x00007fff7d150000 - 0x00007fff7d166000 	C:\Program Files\scilab-6.0.0\bin\core_f.dll
+0x00007fff821c0000 - 0x00007fff822f8000 	C:\Windows\System32\ole32.dll
+0x00007fff7a180000 - 0x00007fff7a22c000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.14393.447_none_0d5aa7fbb6d35646\COMCTL32.dll
+0x0000000008910000 - 0x0000000008943000 	C:\Program Files\scilab-6.0.0\bin\external_objects.dll
+0x00007fff727d0000 - 0x00007fff7296a000 	C:\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.14393.953_none_7300116921188239\gdiplus.dll
+0x0000000008950000 - 0x0000000008980000 	C:\Program Files\scilab-6.0.0\bin\xml.dll
+0x0000000008900000 - 0x000000000890d000 	C:\Program Files\scilab-6.0.0\bin\history_browser.dll
+0x00007fff687f0000 - 0x00007fff6883e000 	C:\Program Files\scilab-6.0.0\bin\libcurl.dll
+0x00000000089b0000 - 0x00000000089b9000 	C:\Program Files\scilab-6.0.0\bin\call_scilab.dll
+0x00000000089f0000 - 0x0000000008a01000 	C:\Program Files\scilab-6.0.0\bin\boolean_gw.dll
+0x00000000089c0000 - 0x00000000089e4000 	C:\Program Files\scilab-6.0.0\bin\cacsd.dll
+0x00007fff82300000 - 0x00007fff8236a000 	C:\Windows\System32\WS2_32.dll
+0x00007fff817b0000 - 0x00007fff8180c000 	C:\Windows\System32\WLDAP32.dll
+0x00007fff82610000 - 0x00007fff82618000 	C:\Windows\System32\Normaliz.dll
+0x0000000008a40000 - 0x0000000008a4f000 	C:\Program Files\scilab-6.0.0\bin\console_gw.dll
+0x0000000008ad0000 - 0x0000000008b05000 	C:\Program Files\scilab-6.0.0\bin\core_gw.dll
+0x0000000008aa0000 - 0x0000000008ab2000 	C:\Program Files\scilab-6.0.0\bin\data_structures.dll
+0x0000000008a60000 - 0x0000000008a91000 	C:\Program Files\scilab-6.0.0\bin\differential_equations_gw.dll
+0x0000000008b30000 - 0x0000000008b42000 	C:\Program Files\scilab-6.0.0\bin\dynamic_link_gw.dll
+0x0000000008c00000 - 0x0000000008c52000 	C:\Program Files\scilab-6.0.0\bin\elementary_functions_gw.dll
+0x0000000008b90000 - 0x0000000008bb9000 	C:\Program Files\scilab-6.0.0\bin\fileio_gw.dll
+0x0000000008b60000 - 0x0000000008b72000 	C:\Program Files\scilab-6.0.0\bin\history_manager_gw.dll
+0x0000000008bd0000 - 0x0000000008bf2000 	C:\Program Files\scilab-6.0.0\bin\integer_gw.dll
+0x0000000008c80000 - 0x0000000008ca1000 	C:\Program Files\scilab-6.0.0\bin\io_gw.dll
+0x0000000008cb0000 - 0x0000000008ccd000 	C:\Program Files\scilab-6.0.0\bin\linear_algebra_gw.dll
+0x0000000008cd0000 - 0x0000000008cdf000 	C:\Program Files\scilab-6.0.0\bin\localization_gw.dll
+0x0000000008d10000 - 0x0000000008d25000 	C:\Program Files\scilab-6.0.0\bin\output_stream_gw.dll
+0x0000000008da0000 - 0x0000000008dc1000 	C:\Program Files\scilab-6.0.0\bin\polynomials.dll
+0x0000000008de0000 - 0x0000000008dfa000 	C:\Program Files\scilab-6.0.0\bin\sparse_gw.dll
+0x0000000008d50000 - 0x0000000008d72000 	C:\Program Files\scilab-6.0.0\bin\string_gw.dll
+0x0000000008d40000 - 0x0000000008d4e000 	C:\Program Files\scilab-6.0.0\bin\time_gw.dll
+0x00007fff67700000 - 0x00007fff6773d000 	C:\Program Files\scilab-6.0.0\bin\pcre.dll
+0x00007fff63650000 - 0x00007fff637e2000 	C:\Windows\SYSTEM32\dbghelp.dll
+0x00007fff7b8b0000 - 0x00007fff7b8c6000 	C:\Program Files\scilab-6.0.0\bin\linpack_f.dll
+0x00007fff7a230000 - 0x00007fff7a23c000 	C:\Program Files\scilab-6.0.0\bin\eispack_f.dll
+0x00007fff64c10000 - 0x00007fff64c43000 	C:\Program Files\scilab-6.0.0\bin\cacsd_f.dll
+0x00007fff64bb0000 - 0x00007fff64c08000 	C:\Program Files\scilab-6.0.0\bin\slatec_f.dll
+0x00007fff558d0000 - 0x00007fff55a57000 	C:\Program Files\scilab-6.0.0\bin\libifcoremd.dll
+0x00007fff54e40000 - 0x00007fff5518b000 	C:\Program Files\scilab-6.0.0\bin\libmmd.dll
+0x00007fff821a0000 - 0x00007fff821bc000 	C:\Windows\System32\imagehlp.dll
+0x00007fff5f340000 - 0x00007fff5f47e000 	C:\Program Files\scilab-6.0.0\bin\libiomp5md.dll
+0x0000000008e60000 - 0x0000000008eaf000 	C:\Program Files\scilab-6.0.0\bin\scigraphic_objects.dll
+0x0000000008eb0000 - 0x0000000008ec0000 	C:\Program Files\scilab-6.0.0\bin\scirenderer.dll
+0x0000000072510000 - 0x000000007262f000 	C:\Program Files\scilab-6.0.0\bin\tcl85.dll
+0x0000000072270000 - 0x000000007242d000 	C:\Program Files\scilab-6.0.0\bin\tk85.dll
+0x00007fff7e9f0000 - 0x00007fff7ea13000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007fff6eae0000 - 0x00007fff6eaf7000 	C:\Program Files\scilab-6.0.0\bin\zlib1.dll
+0x00007fff71330000 - 0x00007fff71339000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007fff557f0000 - 0x00007fff558c4000 	C:\Program Files\scilab-6.0.0\bin\MSVCR110.dll
+0x0000000072430000 - 0x0000000072501000 	C:\Program Files\scilab-6.0.0\bin\MSVCR100.dll
+0x00007fff54d40000 - 0x00007fff54e3b000 	C:\Program Files\scilab-6.0.0\bin\slicot_f.dll
+0x0000000008f00000 - 0x0000000008f1a000 	C:\Program Files\scilab-6.0.0\bin\boolean.dll
+0x00007fff820e0000 - 0x00007fff8219f000 	C:\Windows\System32\OLEAUT32.dll
+0x00007fff81710000 - 0x00007fff817ac000 	C:\Windows\System32\msvcp_win.dll
+0x00007fff820b0000 - 0x00007fff820de000 	C:\Windows\System32\IMM32.dll
+0x00007fff515a0000 - 0x00007fff51664000 	C:\Program Files\scilab-6.0.0\bin\differential_equations_f.dll
+0x0000000008f40000 - 0x0000000008f82000 	C:\Program Files\scilab-6.0.0\bin\differential_equations.dll
+0x0000000008f90000 - 0x0000000008f9e000 	C:\Program Files\scilab-6.0.0\bin\linear_algebra.dll
+0x0000000008fc0000 - 0x0000000008fc8000 	C:\Program Files\scilab-6.0.0\bin\time.dll
+0x00007fff6a120000 - 0x00007fff6a140000 	C:\Program Files\scilab-6.0.0\bin\sparse_f.dll
+0x0000000008ff0000 - 0x0000000008ffc000 	C:\Program Files\scilab-6.0.0\bin\sparse.dll
+0x00007fff671e0000 - 0x00007fff671f7000 	C:\Program Files\scilab-6.0.0\bin\output_stream_f.dll
+0x00007fff7e9c0000 - 0x00007fff7e9eb000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x000000000a760000 - 0x000000000a85e000 	C:\Program Files\scilab-6.0.0\bin\gnu_gettext.dll
+0x00007fff7edc0000 - 0x00007fff7ee55000 	C:\Windows\system32\uxtheme.dll
+0x00007fff83b30000 - 0x00007fff83c8a000 	C:\Windows\System32\MSCTF.dll
+0x00007fff7e1c0000 - 0x00007fff7e1e6000 	C:\Windows\system32\dwmapi.dll
+0x00000000719e0000 - 0x0000000072263000 	C:\Program Files\scilab-6.0.0\java\jre\bin\server\jvm.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path= -Djava.util.logging.config.file=C:\Program Files\scilab-6.0.0/etc/logging.properties -Djava.compiler=JIT -Xmx256m -Xrs -Djogamp.gluegen.UseTempJarCache=false 
+java_command: <unknown>
+java_class_path (initial): C:\Program Files\scilab-6.0.0/modules/jvm/jar/org.scilab.modules.jvm.jar
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_121
+PATH=C:/Program Files/scilab-6.0.0/bin;C:\Program Files\nodejs;C:\Program Files\nodejs\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Justin\AppData\Local\Microsoft\WindowsApps;C:\Users\Justin\AppData\Local\Android\sdk\platform-tools;C:\Users\Justin\AppData\Roaming\npm
+USERNAME=Justin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 14393 (10.0.14393.1198)
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 16685936k(10956516k free), swap 19176304k(12750532k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.40-b25) for windows-amd64 JRE (1.8.0_40-b26), built on Mar  7 2015 13:51:59 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Jun 13 08:23:55 2017
+elapsed time: 628 seconds (0d 0h 10m 28s)
+
