@@ -1,12 +1,25 @@
 //y=wavread("C:\Users\Justin\Desktop\Array-Based-Beam-Forming\Scripts\Fc100KHz_2MSPS_1KHzModulation_June12_2017.wav");
-//most recent with signal
-//y=wavread("C:\Users\Justin\Desktop\Array-Based-Beam-Forming\Scripts\SDRuno_20170718_165226Z_1090002kHz.wav");
-
-
+//nonboxed recs
 //first
-//y=wavread("C:\Users\Justin\Documents\SDRuno_20170727_160623Z_1090000kHz.wav");
+//y=wavread("C:\Users\Justin\Desktop\WavFiles\outputfile1.wav");
 //second
-y=wavread("C:\Users\Justin\Documents\SDRuno_20170727_160643Z_1090000kHz.wav");
+//y=wavread("C:\Users\Justin\Desktop\WavFiles\outputfile2.wav");
+//third
+//y=wavread("C:\Users\Justin\Desktop\WavFiles\outputfile3.wav");
+//fourth
+//y=wavread("C:\Users\Justin\Desktop\WavFiles\outputfile4.wav");
+//fifth
+y=wavread("C:\Users\Justin\Desktop\WavFiles\outputfile5.wav");
+
+//boxed recs
+//first
+//y=wavread("C:\Users\Justin\Documents\SDRuno_20170727_184239Z_1090000kHz.wav"); //440 //didn't work
+//second
+//y=wavread("C:\Users\Justin\Documents\SDRuno_20170727_184440Z_1090000kHz.wav"); //440 //didn't work (bad recording)
+//third
+//y=wavread("C:\Users\Justin\Documents\SDRuno_20170727_184610Z_1090000kHz.wav"); //600 good.
+//fourth
+//y=wavread("C:\Users\Justin\Documents\SDRuno_20170727_184724Z_1090000kHz.wav"); //2000
 
 //y=wavread("C:\Users\Justin\Documents\Visual Studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\outputfile2.wav");
 //y=wavread("C:\Users\Justin\Documents\Visual Studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\outputfile2.wav");
@@ -17,10 +30,10 @@ f = 5*10^3
 O = 2*%pi*f     
 I = y(1,:);     
 Q = y(2,:);     
-//n = size(I,2)   
-//p = floor(log(n)/log(2)); //n = 
-//n = 2^p
-n=262144
+n = size(I,2)   
+p = floor(log(n)/log(2)); //n = 
+n = 2^p
+//n=262144
 I = I(1:n);
 Q = Q(1:n);
 
@@ -93,26 +106,29 @@ Zf=fft(Z)
 //plot (Q(1:m))
 //plot (Q(1:90000))
 //.5788 Q 850 to 6420
+
+//check to see if it started in the middle of a block, if so, move to beginning of next block.
+//probably best to force move it to beginning of next block every time. done
 E2=real(E)
 thresholdIdx=0;
 l=length(E2)
-for i = 1:l
-    if ((E2(i)>.1)&(thresholdIdx==0)) then
+for i = 200:l
+    if ((E2(i)>-5000)&(thresholdIdx==0)) then
         thresholdIdx=i;
     end
 end
 
 j=1
-thresh=thresholdIdx+5500
+thresh=thresholdIdx+3000
 for i=thresholdIdx:thresh
     ECut(j)=E2(i)
     j=j+1
 end
 
-plot (ECut)
-//plot (E(1:90000))
+//plot (ECut)
+plot (E(1:1000))
 //.1 is around middle, could work as pivot pt.
-//if it crosses boundary, start rec, if it crossed down, check to see if enough data was recorded/ record for length of 3200 -8740 =5,540(1 time only)
+//if it crosses boundary, start rec, if it crossed down, check to see if enough data was recorded/ record for length of one cap =440(1 time only)
 
 //plot(fr(1:m)',abs(fE(1:m)))
 //Qmu=lin2mu(Q)
