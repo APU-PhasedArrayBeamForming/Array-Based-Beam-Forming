@@ -109,23 +109,46 @@ Zf=fft(Z)
 
 //check to see if it started in the middle of a block, if so, move to beginning of next block.
 //probably best to force move it to beginning of next block every time. done
-E2=real(E)
+I2=I
 thresholdIdx=0;
-l=length(E2)
-for i = 200:l
-    if ((E2(i)>-5000)&(thresholdIdx==0)) then
+l=length(I2)
+i=1
+for i = 1:l
+    if ((I2(i)>-5000)&(thresholdIdx==0)) then
         thresholdIdx=i;
     end
 end
 
 j=1
-thresh=thresholdIdx+200
+thresh=thresholdIdx+1000
 for i=thresholdIdx:thresh
-    ECut(j)=E2(i)
+    ICut(j)=I2(i)
     j=j+1
 end
 
-plot (ECut)
+//Q
+
+Q2=Q
+thresholdIdx=0;
+l=length(Q2)
+i=1
+for i = 1:l
+    if ((I2(i)>-5000)&(thresholdIdx==0)) then
+        thresholdIdx=i;
+    end
+end
+
+j=1
+thresh=thresholdIdx+1000
+for i=thresholdIdx:thresh
+    QCut(j)=Q2(i)
+    j=j+1
+end
+
+ECut = ICut + %i*QCut;
+fECut = fft(ECut(1:1000), -1);
+
+//plot (ECut)
 //plot (E(1:1000))
 //.1 is around middle, could work as pivot pt.
 //if it crosses boundary, start rec, if it crossed down, check to see if enough data was recorded/ record for length of one cap =440(1 time only)
