@@ -119,14 +119,14 @@ for i = 200:l
 end
 
 j=1
-thresh=thresholdIdx+3000
+thresh=thresholdIdx+200
 for i=thresholdIdx:thresh
     ECut(j)=E2(i)
     j=j+1
 end
 
-//plot (ECut)
-plot (E(1:1000))
+plot (ECut)
+//plot (E(1:1000))
 //.1 is around middle, could work as pivot pt.
 //if it crosses boundary, start rec, if it crossed down, check to see if enough data was recorded/ record for length of one cap =440(1 time only)
 
